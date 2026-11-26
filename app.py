@@ -122,14 +122,14 @@ cheap_month = MONTHS[int(season.idxmin()) - 1]                     # lowest seas
 now_price = float(d[PRICE].iloc[-1])
 
 # ---------- 6. PAGE SWITCHING ----------
-st.sidebar.title("🌽 Farmsharp")
+st.sidebar.image("assets/logo.png")                                # logo in the sidebar
 page = st.sidebar.radio("Go to", ["Market and forecast", "ProfitWise"])  # the only way to switch pages
-st.title("🌽 Farmsharp")
-st.caption("Maize price forecast and ProfitWise for Ilorin, Kwara State")
+st.image("assets/logo.png", width=340)                                  # logo at the top of the page
+st.caption("Maize price forecast for Ilorin, Kwara State")
 
 # ---------- 7. PAGE 1: MARKET AND FORECAST ----------
 if page == "Market and forecast":
-    st.subheader("Market now")
+    st.subheader("🌽 Market now")
     a, b, c = st.columns(3)
     a.metric("Per kg now", naira(now_price))
     b.metric("Expected next month", naira(fc["Expected"][0]))
